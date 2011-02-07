@@ -1,0 +1,8 @@
+This is a mirror for http://www.vim.org/scripts/script.php?script_id=3445
+
+Description
+This colorscheme was inspired by the Molokai color scheme. This is a dark theme for GUI and 256 color terminals. See screenshot here: https://files.me.com/larssmit/34o18v
+ 
+Install details
+Copy the colorscheme into to the directory: ~/.vim/colors
+
