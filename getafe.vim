@@ -10,16 +10,17 @@
 "	:h highlight-groups
 "
 "	Colors
-"
-" blue    #01B0F0
-" pink    #FF358B
-" black   #000000
-" brown   #1B1D1E
-" green   #AEEE00
-" grey    #5A7085
-" orange  #FF500E
-" yellow  #FFDC00
-" white   #F8FFF9
+"         HEX       R   G   B
+" blue    #01B0F0   1   176 240
+" pink    #FF358B   255 53  139
+" black   #000000   0   0   0
+" brown   #1B1D1E   27  29  30
+" green   #AEEE00   174 238 0
+" grey    #5A7085   90  112 133
+" orange  #FF500E   255 80  14
+" yellow  #FFDC00   255 220 0
+" white   #F8FFF9   248 255 249
+" cyan    #C6C5FE   198 197 254
 
 
 set background=dark
@@ -87,6 +88,7 @@ hi Title           guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=1
 hi VisualNOS       guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi WarningMsg      guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi WildMenu        guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
+
 "————————————————————————————————————————————————————————————————————————————————————————————————————————————————————"
 " Syntax related colors
 "————————————————————————————————————————————————————————————————————————————————————————————————————————————————————"
