@@ -133,7 +133,7 @@ hi Todo            guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=1
 
 hi ColorColumn                     guibg=#f7f7f7                                       ctermbg=15
 hi Cursor          guifg=#1B1D1E   guibg=#FF500E                       ctermfg=234     ctermbg=202
-hi CursorLine                      guibg=#f7f7f7                                       ctermbg=15
+hi CursorLine      guifg=#F8FFF9   guibg=#5A7085                                       ctermbg=15
 hi Directory       guifg=#01B0F0                                       ctermfg=39
 hi VertSplit       guifg=#F8FFF9   guibg=#5A7085                       ctermfg=15      ctermbg=60
 hi Folded          guifg=#5A7085   guibg=#FFDC00                       ctermfg=60      ctermbg=220
