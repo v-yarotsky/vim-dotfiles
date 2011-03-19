@@ -31,7 +31,7 @@ iTerm2
 
 Install details
 ===============
-Make sure you have at least iTerm2 alpha17. In this version the theme import features are actived.
+Make sure you have at least iTerm2 alpha17. In this version the theme import features are activated.
 
 Import the colorscheme (getafe.itemcolors) by going to iTerm -> Preferences -> choose Colors tab -> Load presets -> Import
 
