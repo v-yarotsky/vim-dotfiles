@@ -1,12 +1,12 @@
 " Maintainer:   Lars Smit
 " Version:      0.1
-" Last Change:  7 februari 2011
+" Last Change:  18 may 2011
 " Credits:      Vim color scheme "getafe"
 "
-" Color Scheme Overview: 
+" Color Scheme Overview:
 "	:ru syntax/hitest.vim
 "
-" Relevant Help: 
+" Relevant Help:
 "	:h highlight-groups
 "
 "	Colors
@@ -75,7 +75,7 @@ hi PmenuThumb      guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=1
 hi Question        guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi Search          guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi SpecialKey      guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
-hi SpellBad        guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
+"hi SpellBad        guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi SpellCap        guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi SpellLocal      guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
 hi SpellRare       guifg=#F8FFF9   guibg=#1B1D1E   gui=none            ctermfg=15      ctermbg=234
