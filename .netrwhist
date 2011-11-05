@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/vladimiryarotsky/.vim/bundle/vim-ruby-debugger'
+let g:netrw_dirhist_2='/Users/vladimiryarotsky/.vim/bundle/vim-ruby-debugger/plugin'
+let g:netrw_dirhist_3='/Users/vladimiryarotsky/.vim/bundle/command-t'
+let g:netrw_dirhist_4='/Users/vladimiryarotsky/.vim/bundle/command-t/plugin'
+let g:netrw_dirhist_5='/Users/vladimiryarotsky/.vim/bundle/command-t'
+let g:netrw_dirhist_6='/Users/vladimiryarotsky/.vim/bundle/command-t/plugin'
