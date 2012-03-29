@@ -119,7 +119,7 @@ set wildignore+=log/**
 
 " if exists(":NERDTree")
   let g:NERDTreeWinSize = 40
-  map <Leader>n :NERDTreeToggle<CR>
+  map <Leader>n :NERDTreeTabsToggle<CR>
 " endif
 
 let g:no_turbux_mappings=1
