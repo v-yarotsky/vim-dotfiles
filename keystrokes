@@ -11,3 +11,7 @@ i" - select text in quotes
 }  - next paragraphd
 gg - goto line
 '. - to the last edit
+
+* - go to next word occurence
+<*> - highlight next word occurence
+<S-F8> - reset highlight
