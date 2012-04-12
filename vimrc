@@ -67,10 +67,17 @@ nnoremap * :set hlsearch! hlsearch?<CR>
 inoremap ;; <C-O>A;
 inoremap ,, <C-O>A,
 
-nmap [A [e
-nmap [B ]e
-vmap [A [e`[V`]
-vmap [B ]e`[V`]
+if has("gui_running")
+  nmap <C-Up> [e
+  nmap <C-Down> ]e
+  vmap <C-Up> [e`[V`]
+  vmap <C-Down> ]e`[V`]
+else
+  nmap [A [e
+  nmap [B ]e
+  vmap [A [e`[V`]
+  vmap [B ]e`[V`]
+end
 
 "extract to 'before' block
 vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
@@ -90,14 +97,3 @@ for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
 
-
-
-"==================================================early gui settings
-if has("gui_running")
-  let g:Powerline_symbols='fancy'
-
-  nmap <C-Up> [e
-  nmap <C-Down> ]e
-  vmap <C-Up> [e`[V`]
-  vmap <C-Down> ]e`[V`]
-endif
