@@ -10,6 +10,10 @@ set guioptions-=r
 set guioptions-=T
 set guioptions-=L
 
+set cursorline
+
 map <C-j> :tabprevious<CR> 
 map <C-k> :tabnext<CR>
+
+inoremap <S-CR> <C-O>o
 

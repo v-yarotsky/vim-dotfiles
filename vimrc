@@ -22,9 +22,6 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-endif
 set shell=/bin/zsh
 
 
@@ -43,8 +40,6 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c
 set laststatus=2    "always show statusbar
 set showtabline=2   "always show tabs bar
 set number          "show line numbers
-" set cursorline
-" hi CursorLine NONE ctermbg=237
 set showmatch       "show matching braces
 set ttyfast
 set t_Co=256        "set 256 colors mode
@@ -65,28 +60,18 @@ set wildignore+=log/**
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 nmap <leader>vge :tabedit ~/.gvimrc<CR>
+nmap <leader>vr :source $MYVIMRC<CR>
+nmap <leader>vgr :source ~/.gvimrc<CR>
 
 nnoremap * :set hlsearch! hlsearch?<CR>
-
-if has("gui_macvim")
-  inoremap <S-CR> <C-O>o
-  let g:Powerline_symbols='fancy'
-endif
 
 inoremap ;; <C-O>A;
 inoremap ,, <C-O>A,
 
-if has("gui_macvim")
-  nmap <C-Up> [e
-  nmap <C-Down> ]e
-  vmap <C-Up> [e`[V`]
-  vmap <C-Down> ]e`[V`]
-else
-  nmap [A [e
-  nmap [B ]e
-  vmap [A [e`[V`]
-  vmap [B ]e`[V`]
-endif
+nmap [A [e
+nmap [B ]e
+vmap [A [e`[V`]
+vmap [B ]e`[V`]
 
 "extract to 'before' block
 vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
@@ -106,3 +91,14 @@ for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
 
+
+
+"==================================================early gui settings
+if has("gui_running")
+  let g:Powerline_symbols='fancy'
+
+  nmap <C-Up> [e
+  nmap <C-Down> ]e
+  vmap <C-Up> [e`[V`]
+  vmap <C-Down> ]e`[V`]
+endif
