@@ -141,3 +141,7 @@
 	url = https://github.com/tomtom/tlib_vim.git
 	path = bundle/tlib_vim
 	branch = master
+[subtree "bundle/vim-addon-mw-utils"]
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+	path = bundle/vim-addon-mw-utils
+	branch = master
