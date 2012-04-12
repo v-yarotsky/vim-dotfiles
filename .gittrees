@@ -1,0 +1,135 @@
+[subtree "bundle/Auto-Pairs"]
+  url = git@github.com:jiangmiao/auto-pairs.git
+  path = bundle/Auto-Pairs
+  branch = master
+
+[subtree "bundle/Command-T"]
+  url = git@github.com:wincent/Command-T.git
+  path = bundle/Command-T
+  branch = master
+
+[subtree "bundle/ack.vim"]
+  url = git@github.com:mileszs/ack.vim.git
+  path = bundle/ack.vim
+  branch = master
+
+[subtree "bundle/getafe"]
+  url = git@github.com:julienXX/getafe.git
+  path = bundle/getafe
+  branch = master
+
+[subtree "bundle/javaScriptLint.vim"]
+  url = git@github.com:smith/javaScriptLint.vim.git
+  path = bundle/javaScriptLint.vim
+  branch = master
+
+[subtree "bundle/matchit"]
+  url = git@github.com:tsaleh/vim-matchit.git
+  path = bundle/matchit
+  branch = master
+
+[subtree "bundle/molokai"]
+  url = git@github.com:tomasr/molokai.git
+  path = bundle/molokai
+  branch = master
+
+[subtree "bundle/nerdtree"]
+  url = git@github.com:scrooloose/nerdtree.git
+  path = bundle/nerdtree
+  branch = master
+
+[subtree "bundle/simple-javascript-indenter"]
+  url = git@github.com:jiangmiao/simple-javascript-indenter.git
+  path = bundle/simple-javascript-indenter
+  branch = master
+
+[subtree "bundle/snipmate.vim"]
+  url = git@github.com:msanders/snipmate.vim.git
+  path = bundle/snipmate.vim
+  branch = master
+
+[subtree "bundle/splitjoin"]
+  url = git@github.com:AndrewRadev/splitjoin.vim.git
+  path = bundle/splitjoin
+  branch = master
+
+[subtree "bundle/tabular"]
+  url = git@github.com:godlygeek/tabular.git
+  path = bundle/tabular
+  branch = master
+
+[subtree "bundle/tslime"]
+  url = git@github.com:kikijump/tslime.vim.git
+  path = bundle/tslime
+  branch = master
+
+[subtree "bundle/vim-coffee-script"]
+  url = git@github.com:kchmck/vim-coffee-script.git
+  path = bundle/vim-coffee-script
+  branch = master
+
+[subtree "bundle/vim-colors-solarized"]
+  url = git@github.com:altercation/vim-colors-solarized.git
+  path = bundle/vim-colors-solarized
+  branch = master
+
+[subtree "bundle/vim-commentary"]
+  url = git@github.com:tpope/vim-commentary.git
+  path = bundle/vim-commentary
+  branch = master
+
+[subtree "bundle/vim-fugitive"]
+  url = git@github.com:tpope/vim-fugitive.git
+  path = bundle/vim-fugitive
+  branch = master
+
+[subtree "bundle/vim-nerdtree-tabs"]
+  url = git@github.com:jistr/vim-nerdtree-tabs.git
+  path = bundle/vim-nerdtree-tabs
+  branch = master
+
+[subtree "bundle/vim-powerline"]
+  url = git@github.com:Lokaltog/vim-powerline.git
+  path = bundle/vim-powerline
+  branch = develop
+
+[subtree "bundle/vim-rails"]
+  url = git@github.com:tpope/vim-rails.git
+  path = bundle/vim-rails
+  branch = master
+
+[subtree "bundle/vim-repeat"]
+  url = git@github.com:tpope/vim-repeat.git
+  path = bundle/vim-repeat
+  branch = master
+
+[subtree "bundle/vim-ruby"]
+  url = git@github.com:vim-ruby/vim-ruby.git
+  path = bundle/vim-ruby
+  branch = master
+
+[subtree "bundle/vim-ruby-debugger"]
+  url = git@github.com:astashov/vim-ruby-debugger.git
+  path = bundle/vim-ruby-debugger
+  branch = master
+
+[subtree "bundle/vim-rvm"]
+  url = git@github.com:tpope/vim-rvm.git
+  path = bundle/vim-rvm
+  branch = master
+
+[subtree "bundle/vim-surround"]
+  url = git@github.com:tpope/vim-surround.vim
+  path = bundle/vim-surround
+  branch = master
+
+[subtree "bundle/vim-turbux"]
+  url = git@github.com:jgdavey/vim-turbux.git
+  path = bundle/vim-turbux
+  branch = master
+
+[subtree "bundle/vim-unimpaired"]
+  url = git@github.com:tpope/vim-unimpaired.git
+  path = bundle/vim-unimpaired
+  branch = master
+
