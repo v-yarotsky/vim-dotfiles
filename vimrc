@@ -24,7 +24,6 @@ set expandtab
 
 set shell=/bin/zsh
 
-
 set clipboard=unnamed
 
 "==================================================ruby specifig settings
@@ -81,8 +80,8 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 nmap \ls i<CR><ESC>
 
-"==================================================other filetypes support
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+"write file as sudo
+cmap w!! w !sudo tee % >/dev/null
 
 
 
