@@ -8,7 +8,7 @@ colorscheme solarized
 set guicursor=a:blinkon0
 " set guifont=Monaco:h12
 " set guifont=Consolas:h12
-set guifont="Consolas for Powerline:h12"
+set guifont=Consolas\ for\ Powerline:h12
 set guioptions-=r
 set guioptions-=T
 set guioptions-=L
