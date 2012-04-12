@@ -51,8 +51,8 @@ colorscheme molokai
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
 set showtabline=2   "always show tabs bar
-set showmode
-set showcmd
+" set showmode
+" set showcmd
 set number          "show line numbers
 " " set nocursorline nocursorcolumn
 " set cursorline
@@ -60,7 +60,6 @@ set number          "show line numbers
 set showmatch       "show matching braces
 set ttyfast
 set t_Co=256        "set 256 colors mode
-set hlsearch        "highlight search matches
 set incsearch
 set foldlevel=100
 set backspace=indent,eol,start
@@ -118,7 +117,9 @@ set wildignore+=log/**
 " endif
 
 " if exists(":NERDTree")
+  let g:NERDTreeMinimalUI = 1
   let g:NERDTreeWinSize = 40
+  let g:nerdtree_tabs_focus_on_files = 1
   map <Leader>n :NERDTreeTabsToggle<CR>
 " endif
 
@@ -131,11 +132,11 @@ nmap <leader>S <Plug>SendFocusedTestToTmux
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 nmap <leader>vge :tabedit ~/.gvimrc<CR>
 
-"opt-shift-8
-nnoremap ° :nohlsearch<CR>
+nnoremap * :set hlsearch! hlsearch?<CR>
 
 if has("gui_macvim")
   inoremap <S-CR> <C-O>o
+  let g:Powerline_symbols='fancy'
 endif
 
 inoremap ;; <C-O>A;
@@ -153,11 +154,6 @@ else
   vmap [B ]e`[V`]
 endif
 
-nnoremap <Leader>ccc :s#_\(\l\)#\u\1#g
-
-nnoremap <C-W>nt :call MoveToNextTab()<CR>
-nnoremap <C-W>pr :call MoveToPrevTab()<CR>
-
 "extract to 'before' block
 vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
 
@@ -165,8 +161,8 @@ vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 "find among ruby files
-nnoremap <C-F>r :LAck! %s --type=ruby<CR>
-nnoremap <C-F>j :LAck! %s --type=javascript<CR>
+" nnoremap <C-F>r :LAck! %s --type=ruby<CR>
+" nnoremap <C-F>j :LAck! %s --type=javascript<CR>
 
 nmap \ls i<CR><ESC>
 
