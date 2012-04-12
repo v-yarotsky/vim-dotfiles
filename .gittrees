@@ -145,3 +145,7 @@
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 	path = bundle/vim-addon-mw-utils
 	branch = master
+[subtree "bundle/snipmate-snippets"]
+	url = https://github.com/honza/snipmate-snippets.git
+	path = bundle/snipmate-snippets
+	branch = master
