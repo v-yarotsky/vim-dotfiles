@@ -153,3 +153,7 @@
 	url = https://github.com/xolox/vim-notes.git
 	path = bundle/vim-notes
 	branch = master
+[subtree "bundle/vim-ruby-refactoring"]
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
+	path = bundle/vim-ruby-refactoring
+	branch = master
