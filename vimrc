@@ -58,11 +58,9 @@ set wildignore+=log/**
 
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
-nmap <leader>vge :tabedit ~/.gvimrc<CR>
 nmap <leader>vr :source $MYVIMRC<CR>
-nmap <leader>vgr :source ~/.gvimrc<CR>
 
-nnoremap * :set hlsearch! hlsearch?<CR>
+nnoremap t* :set hlsearch! hlsearch?<CR>
 
 inoremap ;; <C-O>A;
 inoremap ,, <C-O>A,
@@ -104,7 +102,7 @@ if has("gui_running")
   set guioptions-=T
   set guioptions-=L
 
-  set cursorline
+  " set cursorline
 
   map <C-j> :tabprevious<CR> 
   map <C-k> :tabnext<CR>

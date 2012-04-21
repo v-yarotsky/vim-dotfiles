@@ -1,0 +1,1 @@
+set grepprg=ack
