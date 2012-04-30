@@ -157,3 +157,7 @@
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
 	path = bundle/vim-ruby-refactoring
 	branch = master
+[subtree "bundle/vim-bclose"]
+	url = https://github.com/rwfitzge/vim-bclose
+	path = bundle/vim-bclose
+	branch = master
