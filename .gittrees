@@ -161,3 +161,7 @@
 	url = https://github.com/rwfitzge/vim-bclose
 	path = bundle/vim-bclose
 	branch = master
+[subtree "bundle/darkspectrum"]
+	url = https://github.com/jeremycw/darkspectrum
+	path = bundle/darkspectrum
+	branch = master
