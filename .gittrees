@@ -165,3 +165,7 @@
 	url = https://github.com/jeremycw/darkspectrum
 	path = bundle/darkspectrum
 	branch = master
+[subtree "bundle/number-marks"]
+	url = https://github.com/vim-scripts/number-marks
+	path = bundle/number-marks
+	branch = master
