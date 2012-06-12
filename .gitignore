@@ -2,3 +2,4 @@ tmp/
 tags
 bundle/vim-notes/misc/notes/*
 .netrwhist
+view/

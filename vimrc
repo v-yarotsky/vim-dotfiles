@@ -33,7 +33,13 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-colorscheme molokai
+if $ZSH_THEME ==? "gor-solarized"
+  set background=light
+  let g:soliarized_termcolors=256
+  colorscheme solarized
+else
+  colorscheme molokai
+endif
 
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
@@ -88,6 +94,10 @@ nmap \ls i<CR><ESC>
 "write file as sudo
 cmap w!! w !sudo tee % >/dev/null
 
+"replace curword word with yanked
+nmap <C-x> "_cw<C-r>"
+vmap <C-x> "0p
+
 
 
 "==================================================gui settings
@@ -110,7 +120,8 @@ if has("gui_running")
   inoremap <S-CR> <C-O>o
 endif
 
-
+nmap <Leader>str eF:xysiw"
+nmap <Leader>sym ds"i:<ESC>
 
 "==================================================plugins settings
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
