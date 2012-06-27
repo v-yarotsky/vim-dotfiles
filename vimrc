@@ -33,10 +33,12 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-if $ZSH_THEME ==? "gor-solarized"
+if $ITERM_PROFILE ==? "Solarized"
   set background=light
   let g:soliarized_termcolors=256
   colorscheme solarized
+elseif $ITERM_PROFILE ==? "Darkspectrum"
+  colorscheme darkspectrum
 else
   colorscheme molokai
 endif
@@ -63,6 +65,11 @@ set wildignore+=tmp/**
 set wildignore+=log/**
 
 "==================================================mappings
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 nmap <leader>vr :source $MYVIMRC<CR>
 
@@ -84,7 +91,7 @@ else
 end
 
 "extract to 'before' block
-vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
+" vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
 
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
