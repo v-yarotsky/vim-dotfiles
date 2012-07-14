@@ -1,6 +1,4 @@
-if has("gui_running")
-  let g:Powerline_symbols='fancy'
-endif
+let g:Powerline_symbols='fancy'
 
 if g:colors_name == 'solarized'
   let g:Powerline_theme='skwp'

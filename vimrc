@@ -16,7 +16,8 @@ set secure
 set nowrap
 set nobackup
 set nowritebackup
-set directory=$HOME/.vim/tmp/
+set noswapfile
+set dir=$HOME/.vim/tmp/
 
 set softtabstop=2
 set shiftwidth=2
@@ -43,7 +44,7 @@ else
   colorscheme molokai
 endif
 
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
+" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
 set showtabline=2   "always show tabs bar
 set number          "show line numbers
@@ -89,9 +90,6 @@ else
   vmap [A [e`[V`]
   vmap [B ]e`[V`]
 end
-
-"extract to 'before' block
-" vmap <Leader>bed "td?describe<CR>obefore(:each) do<CR>end<CR><ESC>kk"tp
 
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
