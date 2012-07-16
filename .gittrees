@@ -58,11 +58,6 @@
   path = bundle/tabular
   branch = master
 
-[subtree "bundle/tslime"]
-  url = git@github.com:kikijump/tslime.vim.git
-  path = bundle/tslime
-  branch = master
-
 [subtree "bundle/vim-coffee-script"]
   url = git@github.com:kchmck/vim-coffee-script.git
   path = bundle/vim-coffee-script
