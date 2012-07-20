@@ -164,3 +164,7 @@
 	url = https://github.com/vim-scripts/number-marks
 	path = bundle/number-marks
 	branch = master
+[subtree "bundle/vimux"]
+	url = https://github.com/benmills/vimux.git
+	path = bundle/vimux
+	branch = master
