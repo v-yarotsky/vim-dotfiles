@@ -345,4 +345,8 @@ class CurrentTmuxSession < TmuxSession
     `echo $TMUX` =~ /.+/ ? true : false
   end
 end
+
+class Object
+  def flush; end unless Object.new.respond_to?(:flush)
+end
 EOF
