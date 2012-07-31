@@ -168,3 +168,7 @@
 	url = https://github.com/benmills/vimux.git
 	path = bundle/vimux
 	branch = master
+[subtree "bundle/ctrlp"]
+	url = https://github.com/kien/ctrlp.vim.git
+	path = bundle/ctrlp
+	branch = master
