@@ -133,3 +133,7 @@ for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
 
+set tags += "tmp/tags"
+map <C-r><C-t> :!bundle list --paths=true \| xargs ctags -f tmp/tags -R --exclude=.git --exclude=.tmp --exclude=log --langmap="ruby:+.rake.builder.rjs" `pwd`/*<CR><CR>
+
+

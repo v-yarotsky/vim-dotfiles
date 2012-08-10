@@ -172,3 +172,7 @@
 	url = https://github.com/kien/ctrlp.vim.git
 	path = bundle/ctrlp
 	branch = master
+[subtree "bundle/vim-slim"]
+	url = https://github.com/bbommarito/vim-slim.git
+	path = bundle/vim-slim
+	branch = master
