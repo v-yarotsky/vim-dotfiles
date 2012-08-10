@@ -176,3 +176,7 @@
 	url = https://github.com/bbommarito/vim-slim.git
 	path = bundle/vim-slim
 	branch = master
+[subtree "bundle/vim-tomorrow-theme"]
+	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+	path = bundle/vim-tomorrow-theme
+	branch = master
