@@ -94,14 +94,11 @@ end
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
+"split line
 nmap \ls i<CR><ESC>
 
 "write file as sudo
 cmap w!! w !sudo tee % >/dev/null
-
-"replace curword word with yanked
-nmap <C-x> "_cw<C-r>"
-vmap <C-x> "0p
 
 
 
@@ -112,7 +109,7 @@ if has("gui_running")
   colorscheme solarized
 
   set guicursor=a:blinkon0
-  set guifont=Consolas\ for\ Powerline:h13
+  set guifont=Consolas\ for\ Powerline:h12
   set guioptions-=r
   set guioptions-=T
   set guioptions-=L
