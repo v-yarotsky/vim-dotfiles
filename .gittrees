@@ -180,3 +180,7 @@
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
 	path = bundle/vim-tomorrow-theme
 	branch = master
+[subtree "bundle/bufkill"]
+	url = https://github.com/vim-scripts/bufkill.vim.git
+	path = bundle/bufkill
+	branch = master
