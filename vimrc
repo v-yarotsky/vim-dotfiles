@@ -71,6 +71,9 @@ command Wq wq
 command W w
 command Q q
 
+cnoreabbrev tx tabclose
+cnoreabbrev tc tabnew
+
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 nmap <leader>vr :source $MYVIMRC<CR>
 
