@@ -94,6 +94,7 @@ else
   vmap [B ]e`[V`]
 end
 
+
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
@@ -101,7 +102,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 nmap \ls i<CR><ESC>
 
 "write file as sudo
-cmap w!! w !sudo tee % >/dev/null
+cmap w!! w !sudo tee % > /dev/null
 
 
 
@@ -119,14 +120,11 @@ if has("gui_running")
 
   " set cursorline
 
-  map <C-j> :tabprevious<CR> 
+  map <C-j> :tabprevious<CR>
   map <C-k> :tabnext<CR>
 
   inoremap <S-CR> <C-O>o
 endif
-
-nmap <Leader>str eF:xysiw"
-nmap <Leader>sym ds"i:<ESC>
 
 "==================================================plugins settings
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
@@ -136,4 +134,18 @@ endfor
 set tags += "tmp/tags"
 map <C-r><C-t> :!bundle list --paths=true \| xargs ctags -f tmp/tags -R --exclude=.git --exclude=.tmp --exclude=log --langmap="ruby:+.rake.builder.rjs" `pwd`/*<CR><CR>
 
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+set timeoutlen=1000 ttimeoutlen=0
