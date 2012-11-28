@@ -65,6 +65,8 @@ set wildignore+=*.DS_Store?                      " OSX bullshit
 set wildignore+=tmp/**
 set wildignore+=log/**
 
+set completeopt=longest,menuone
+
 "==================================================mappings
 command WQ wq
 command Wq wq
@@ -174,3 +176,11 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>l :PromoteToLet<cr>
 
+if !exists( "*EndToken" )
+  function EndToken()
+    let current_line = getline( '.' )
+    return 'end'
+  endfunction
+endif
+
+imap <C-E> <ESC>:execute 'normal o' . EndToken()<CR>O
