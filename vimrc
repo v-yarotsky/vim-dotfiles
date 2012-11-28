@@ -67,6 +67,8 @@ set wildignore+=log/**
 
 set completeopt=longest,menuone
 
+set lazyredraw
+
 "==================================================mappings
 command WQ wq
 command Wq wq
