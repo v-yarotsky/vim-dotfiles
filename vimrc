@@ -59,7 +59,7 @@ au InsertEnter * hi StatusLine term=reverse ctermbg=234
 au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
 set wildmenu
-set wildmode=list:longest
+set wildmode=longest,list
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
 set wildignore+=*.DS_Store?                      " OSX bullshit
 set wildignore+=tmp/**
@@ -148,4 +148,29 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" Kill escape delay
 set timeoutlen=1000 ttimeoutlen=0
+
+" Indent-Autocomplete on Tab
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+nnoremap <cr> :nohlsearch
+
+imap <c-l> <space>=><space>
+
+function! PromoteToLet()
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>l :PromoteToLet<cr>
+
