@@ -43,11 +43,6 @@
   path = bundle/simple-javascript-indenter
   branch = master
 
-[subtree "bundle/snipmate.vim"]
-  url = git@github.com:msanders/snipmate.vim.git
-  path = bundle/snipmate.vim
-  branch = master
-
 [subtree "bundle/splitjoin"]
   url = git@github.com:AndrewRadev/splitjoin.vim.git
   path = bundle/splitjoin
@@ -139,10 +134,6 @@
 [subtree "bundle/vim-addon-mw-utils"]
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 	path = bundle/vim-addon-mw-utils
-	branch = master
-[subtree "bundle/snipmate-snippets"]
-	url = https://github.com/honza/snipmate-snippets.git
-	path = bundle/snipmate-snippets
 	branch = master
 [subtree "bundle/vim-notes"]
 	url = https://github.com/xolox/vim-notes.git
