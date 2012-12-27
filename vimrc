@@ -24,6 +24,7 @@ set shiftwidth=2
 set expandtab
 
 set shell=/bin/zsh
+set grepprg=ack
 
 set clipboard=unnamed
 
@@ -65,9 +66,10 @@ set wildignore+=*.DS_Store?                      " OSX bullshit
 set wildignore+=tmp/**
 set wildignore+=log/**
 
-set completeopt=longest,menuone
+" set completeopt=longest,menuone
 
 set lazyredraw
+set shiftround
 
 "==================================================mappings
 command WQ wq
@@ -153,7 +155,7 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Kill escape delay
-set timeoutlen=1000 ttimeoutlen=0
+set timeoutlen=300 ttimeoutlen=0
 
 " Indent-Autocomplete on Tab
 function! InsertTabWrapper()
@@ -169,20 +171,14 @@ inoremap <s-tab> <c-n>
 
 nnoremap <cr> :nohlsearch
 
-imap <c-l> <space>=><space>
+"emacs-style line begin and end
+imap <c-a> <c-o>^
+imap <c-e> <c-o>$
 
-function! PromoteToLet()
-  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
-  :normal ==
-endfunction
-:command! PromoteToLet :call PromoteToLet()
-:map <leader>l :PromoteToLet<cr>
+" Russian keymap FTW; switch with C-^
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
 
-if !exists( "*EndToken" )
-  function EndToken()
-    let current_line = getline( '.' )
-    return 'end'
-  endfunction
-endif
-
-imap <C-E> <ESC>:execute 'normal o' . EndToken()<CR>O
+nmap <S-Z><S-X> :q!
