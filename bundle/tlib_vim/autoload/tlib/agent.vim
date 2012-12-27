@@ -3,8 +3,8 @@
 " @Website:     http://www.vim.org/account/profile.php?user_id=4037
 " @License:     GPL (see http://www.gnu.org/licenses/gpl.txt)
 " @Created:     2007-06-24.
-" @Last Change: 2012-03-02.
-" @Revision:    0.1.192
+" @Last Change: 2012-10-03.
+" @Revision:    0.1.208
 
 
 " :filedoc:
@@ -14,11 +14,16 @@
 " General {{{1
 
 function! tlib#agent#Exit(world, selected) "{{{3
-    call a:world.CloseScratch()
-    let a:world.state = 'exit empty escape'
-    let a:world.list = []
-    " let a:world.base = []
-    call a:world.ResetSelected()
+    if a:world.key_mode == 'default'
+        call a:world.CloseScratch()
+        let a:world.state = 'exit empty escape'
+        let a:world.list = []
+        " let a:world.base = []
+        call a:world.ResetSelected()
+    else
+        let a:world.key_mode = 'default'
+        let a:world.state = 'redisplay'
+    endif
     return a:world
 endf
 
@@ -508,5 +513,51 @@ function! tlib#agent#Wildcard(world, selected) "{{{3
     endif
     let a:world.state = 'redisplay'
     return a:world
+endf
+
+
+function! tlib#agent#Null(world, selected) "{{{3
+    let a:world.state = 'redisplay'
+    return a:world
+endf
+
+
+function! tlib#agent#ExecAgentByName(world, selected) "{{{3
+    let s:agent_names_world = a:world
+    let agent_names = {}
+    for def in values(a:world.key_map[a:world.key_mode])
+        if has_key(def, 'help') && !empty(def.help) && has_key(def, 'agent') && !empty(def.agent)
+            let agent_names[def.help] = def.agent
+        endif
+    endfor
+    let s:agent_names = join(sort(keys(agent_names)), "\n")
+    let command = input('Command: ', '', 'custom,tlib#agent#CompleteAgentNames')
+    " TLogVAR command
+    if !has_key(agent_names, command)
+        " TLogVAR command
+        silent! let matches = filter(keys(agent_names), 'v:val =~ command')
+        " TLogVAR matches
+        if len(matches) == 1
+            let command = matches[0]
+        endif
+    endif
+    if has_key(agent_names, command)
+        let agent = agent_names[command]
+        return call(agent, [a:world, a:selected])
+    else
+        if !empty(command)
+            echohl WarningMsg
+            echom "Unknown command:" command
+            echohl NONE
+            sleep 1
+        endif
+        let a:world.state = 'display'
+        return a:world
+    endif
+endf
+
+
+function! tlib#agent#CompleteAgentNames(ArgLead, CmdLine, CursorPos)
+    return s:agent_names
 endf
 
