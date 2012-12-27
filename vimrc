@@ -157,28 +157,16 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Kill escape delay
 set timeoutlen=300 ttimeoutlen=0
 
-" Indent-Autocomplete on Tab
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
-
-nnoremap <cr> :nohlsearch
+nnoremap <cr> :nohlsearch<cr>
 
 "emacs-style line begin and end
 imap <c-a> <c-o>^
 imap <c-e> <c-o>$
 
 " Russian keymap FTW; switch with C-^
-set keymap=russian-jcukenwin
-set iminsert=0
-set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+" set keymap=russian-jcukenwin
+" set iminsert=0
+" set imsearch=0
+" highlight lCursor guifg=NONE guibg=Cyan
 
 nmap <S-Z><S-X> :q!
