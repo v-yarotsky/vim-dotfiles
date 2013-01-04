@@ -35,11 +35,11 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-if $TMUX_COLORS ==? "solarized-light"
+if $ITERM_COLORS ==? "solarized-light"
   set background=light
   let g:soliarized_termcolors=256
   colorscheme solarized
-elseif $TMUX_COLORS ==? "darkspectrum"
+elseif $ITERM_COLORS ==? "darkspectrum"
   colorscheme darkspectrum
 else
   colorscheme molokai
