@@ -170,3 +170,21 @@ imap <c-e> <c-o>$
 " highlight lCursor guifg=NONE guibg=Cyan
 
 nmap <S-Z><S-X> :q!
+
+nmap , :AC<CR>
+
+function! RSpecFile()
+  execute("!clear && rspec " . expand("%p"))
+endfunction
+
+function! RSpecCurrent()
+  execute("!clear && rspec " . expand("%p") . ":" . line("."))
+endfunction
+
+function! RSpecAll()
+  execute("!clear && rspec")
+endfunction
+
+nmap <leader>xs :call RSpecFile()<CR>
+nmap <leader>xa :call RSpecAll()<CR>
+nmap <leader>xc :call RSpecCurrent()<CR>

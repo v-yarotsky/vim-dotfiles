@@ -24,8 +24,8 @@ function! s:ClosestSource(spec)
 endfunction
 
 function! s:ClosestSpec(file)
-  let l:suffixed = substitute(a:file, ".rb$", "_spec.rb", "")
-  let l:files = split(system('find . -type f | sed s/\.\\/// | grep "^spec/" | grep -F "' . l:suffixed . '"'), "\n")
+  let l:spec_guess = substitute(substitute(a:file, ".rb$", "_spec.rb", ""), "^app/", "", "")
+  let l:files = split(system('find . -type f | sed s/\.\\/// | grep "^spec/" | grep -F "' . l:spec_guess . '"'), "\n")
   return s:Result(l:files)
 endfunction
 
