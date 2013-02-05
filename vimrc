@@ -39,8 +39,10 @@ if $ITERM_COLORS ==? "solarized-light"
   set background=light
   let g:soliarized_termcolors=256
   colorscheme solarized
+  hi NonText cterm=NONE ctermfg=white ctermbg=white
 elseif $ITERM_COLORS ==? "darkspectrum"
   colorscheme darkspectrum
+  hi NonText cterm=NONE ctermfg=235 ctermbg=235
 else
   colorscheme molokai
 endif
@@ -169,7 +171,7 @@ imap <c-e> <c-o>$
 " set imsearch=0
 " highlight lCursor guifg=NONE guibg=Cyan
 
-nmap <S-Z><S-X> :q!
+nmap <S-Z><S-X> :q!<CR>
 
 nmap , :AC<CR>
 
@@ -188,3 +190,5 @@ endfunction
 nmap <leader>xs :call RSpecFile()<CR>
 nmap <leader>xa :call RSpecAll()<CR>
 nmap <leader>xc :call RSpecCurrent()<CR>
+nmap <leader>e :!%<CR>
+nmap <leader>w :w<CR>
