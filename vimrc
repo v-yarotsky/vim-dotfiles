@@ -63,9 +63,7 @@ au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
 set wildmenu
 set wildmode=longest,list
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=doc/*,tmp/*,log/*
-set wildignore+=*.DS_Store                       " OSX bullshit
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
 
 " set completeopt=longest,menuone
 
