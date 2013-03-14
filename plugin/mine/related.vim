@@ -42,18 +42,21 @@ ruby << EOF
   class RspecFinder
     def source_for_test
       source_dir = current_file_relative_to_repo.sub(%r{^spec/}, "").dirname
+      unless File.exists?(source_dir)
+        source_dir = current_file_relative_to_repo.sub(%r{^spec/}, "app/").dirname
+      end
       source_file = current_file_relative_to_repo.basename.sub(/_spec.rb$/, ".rb")
       File.join(repo_root, source_dir, source_file)
     end
 
     def test_for_source
-      test_dir = current_file_relative_to_repo.sub(/^/, "spec/").dirname
+      test_dir = current_file_relative_to_repo.sub(/^(app\/)?/, "spec/").dirname
       test_file = current_file_relative_to_repo.basename.sub(/\.rb$/, "_spec.rb")
       File.join(repo_root, test_dir, test_file)
     end
 
     def is_test?
-      current_file.basename =~ /_spec\.rb$/
+      current_file.basename.to_s =~ %r{_spec\.rb$}
     end
   end
 
