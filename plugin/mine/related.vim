@@ -37,6 +37,10 @@ ruby << EOF
     def is_test?
       VIM.message("Don't know whether it's test or source")
     end
+
+    def run_test(*)
+      VIM.message("Don't know how to run related test")
+    end
   end
 
   class RspecFinder
@@ -58,6 +62,10 @@ ruby << EOF
     def is_test?
       current_file.basename.to_s =~ %r{_spec\.rb$}
     end
+
+    def run_test(test_file)
+      VIM.command ":!clear && rspec #{test_file}"
+    end
   end
 
   class TestUnitFinder
@@ -76,11 +84,20 @@ ruby << EOF
     def is_test?
       current_file_relative_to_repo.basename.to_s =~ /^test_/
     end
+
+    def run_test(test_file)
+      VIM.command ":!clear && ruby -Itest #{test_file}"
+    end
   end
 
   def open_related_file
     related_file = finder.is_test? ? finder.source_for_test : finder.test_for_source
     VIM.command "silent :e #{related_file}"
+  end
+
+  def run_test
+    test_file = finder.is_test? ? current_file_relative_to_repo : finder.test_for_source
+    finder.run_test(test_file)
   end
 
   def finder
@@ -99,54 +116,12 @@ function! s:GetRelatedFile()
   :ruby open_related_file
 endfunction
 
+function! s:RunRelatedTest()
+  :ruby run_test
+endfunction
+
 command! AC :call <SID>GetRelatedFile()
+command! AS :call <SID>RunRelatedTest()
 
 finish
 
-" Open/Create related spec/file
-function! s:CreateRelated()
-  let related = s:GetRelatedFile(expand('%'))
-  call s:Open(related)
-endfunction
-
-" Return the related filename
-function! s:GetRelatedFile(file)
-  if s:IsSpec(a:file)
-    return s:ClosestSource(a:file)
-  else
-    return s:ClosestSpec(a:file)
-  endif
-endfunction
-
-function! s:IsSpec(file)
-  return match(a:file, '_spec\.rb$') != -1
-endfunction
-
-function! s:ClosestSource(spec)
-  let l:unsuffixed = substitute(substitute(a:spec, "_spec.rb$", ".rb", ""), '^spec/', '', '')
-  let l:files = split(system('find . -type f | sed s/\.\\/// | grep -v "^spec/" | grep -F "' . l:unsuffixed . '"'), "\n")
-  return s:Result(l:files)
-endfunction
-
-function! s:ClosestSpec(file)
-  let l:spec_guess = substitute(substitute(a:file, ".rb$", "_spec.rb", ""), "^app/", "", "")
-  let l:files = split(system('find . -type f | sed s/\.\\/// | grep "^spec/" | grep -F "' . l:spec_guess . '"'), "\n")
-  return s:Result(l:files)
-endfunction
-
-function! s:Result(matches)
-  if len(a:matches) > 0
-    echom a:matches[0]
-    return a:matches[0]
-  else
-   return ""
-  endif
-endfunction
-
-" Open the related file in a vsplit
-function! s:Open(file)
-  exec('e ' . a:file)
-endfunction
-
-" Register a new command `AC` for open/create a related file
-command! AC :call <SID>CreateRelated()

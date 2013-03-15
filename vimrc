@@ -171,6 +171,7 @@ imap <c-e> <c-o>$
 nmap <S-Z><S-X> :q!<CR>
 
 nmap , :AC<CR>
+nmap ; :AS<CR>
 
 function! RSpecFile()
   execute("!clear && rspec " . expand("%p"))
