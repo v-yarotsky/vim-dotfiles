@@ -172,6 +172,7 @@ nmap <S-Z><S-X> :q!<CR>
 
 nmap , :AC<CR>
 nmap ; :AS<CR>
+nmap  :ACK<CR>
 
 function! RSpecFile()
   execute("!clear && rspec " . expand("%p"))
