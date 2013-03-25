@@ -120,8 +120,8 @@ function! s:RunRelatedTest()
   :ruby run_test
 endfunction
 
-command! AC :call <SID>GetRelatedFile()
-command! AS :call <SID>RunRelatedTest()
+command! RelatedOpenFile :call <SID>GetRelatedFile()
+command! RelatedRunTest  :call <SID>RunRelatedTest()
 
 finish
 

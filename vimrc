@@ -23,7 +23,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-set shell=/bin/zsh
+set shell=/bin/sh
 set grepprg=ack
 
 set clipboard=unnamed
@@ -107,7 +107,7 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 nmap \ls i<CR><ESC>
 
 "write file as sudo
-cmap w!! w !sudo tee % > /dev/null
+cmap w!! w !sudo tee % >&-
 
 
 
@@ -170,21 +170,9 @@ imap <c-e> <c-o>$
 
 nmap <S-Z><S-X> :q!<CR>
 
-nmap , :AC<CR>
-nmap ; :AS<CR>
+nmap ,, :RelatedOpenFile<CR>
+nmap , :RelatedRunTest<CR>
 nmap  :ACK<CR>
-
-function! RSpecFile()
-  execute("!clear && rspec " . expand("%p"))
-endfunction
-
-function! RSpecCurrent()
-  execute("!clear && rspec " . expand("%p") . ":" . line("."))
-endfunction
-
-function! RSpecAll()
-  execute("!clear && rspec")
-endfunction
 
 nmap <leader>xs :call RSpecFile()<CR>
 nmap <leader>xa :call RSpecAll()<CR>
