@@ -14,7 +14,7 @@ ruby << EOF
   require 'pathname'
 
   def repo_root
-    Pathname.new(`git rev-parse --show-toplevel`.chomp)
+    Pathname.new(`cd #{current_file.dirname} && git rev-parse --show-toplevel`.chomp)
   end
 
   def current_file
@@ -64,7 +64,7 @@ ruby << EOF
     end
 
     def run_test(test_file)
-      VIM.command ":!clear && rspec #{test_file}"
+      VIM.command ":!clear && cd #{repo_root} && rspec #{test_file}"
     end
   end
 
@@ -86,7 +86,7 @@ ruby << EOF
     end
 
     def run_test(test_file)
-      VIM.command ":!clear && ruby -Itest #{test_file}"
+      VIM.command ":!clear && cd #{repo_root} && ruby -Itest #{test_file}"
     end
   end
 

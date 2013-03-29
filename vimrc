@@ -173,6 +173,7 @@ nmap <S-Z><S-X> :q!<CR>
 nmap ,, :RelatedOpenFile<CR>
 nmap , :RelatedRunTest<CR>
 nmap  :ACK<CR>
+vnoremap  "hy:Ack! <C-r>h<CR>
 
 nmap <leader>xs :call RSpecFile()<CR>
 nmap <leader>xa :call RSpecAll()<CR>
