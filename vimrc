@@ -175,8 +175,5 @@ nmap , :RelatedRunTest<CR>
 nmap  :ACK<CR>
 vnoremap  "hy:Ack! <C-r>h<CR>
 
-nmap <leader>xs :call RSpecFile()<CR>
-nmap <leader>xa :call RSpecAll()<CR>
-nmap <leader>xc :call RSpecCurrent()<CR>
 nmap <leader>e :!%<CR>
 nmap <leader>w :w<CR>
