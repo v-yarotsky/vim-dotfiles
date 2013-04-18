@@ -1,6 +1,9 @@
 "==================================================pathogen
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-ruby-debugger')
+call add(g:pathogen_disabled, 'vim-git-gutter')
+call add(g:pathogen_disabled, 'Auto-Pairs')
+
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -24,7 +27,7 @@ set shiftwidth=2
 set expandtab
 
 set shell=/bin/sh
-set grepprg=ack
+set grepprg=ag
 
 set clipboard=unnamed
 
@@ -35,17 +38,18 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-if $ITERM_COLORS ==? "solarized-light"
-  set background=light
-  let g:soliarized_termcolors=256
-  colorscheme solarized
-  hi NonText cterm=NONE ctermfg=white ctermbg=white
-elseif $ITERM_COLORS ==? "darkspectrum"
-  colorscheme darkspectrum
-  hi NonText cterm=NONE ctermfg=235 ctermbg=235
-else
-  colorscheme molokai
-endif
+colorscheme Tomorrow
+" if $ITERM_COLORS ==? "solarized-light"
+"   set background=light
+"   let g:soliarized_termcolors=256
+"   colorscheme solarized
+"   hi NonText cterm=NONE ctermfg=white ctermbg=white
+" elseif $ITERM_COLORS ==? "darkspectrum"
+"   colorscheme darkspectrum
+"   hi NonText cterm=NONE ctermfg=235 ctermbg=235
+" else
+"   colorscheme molokai
+" endif
 
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
