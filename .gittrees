@@ -78,11 +78,6 @@
   path = bundle/vim-nerdtree-tabs
   branch = master
 
-[subtree "bundle/vim-powerline"]
-  url = git@github.com:skwp/vim-powerline.git
-  path = bundle/vim-powerline
-  branch = solarized-theme
-
 [subtree "bundle/vim-rails"]
   url = git@github.com:tpope/vim-rails.git
   path = bundle/vim-rails
