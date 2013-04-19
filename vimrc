@@ -53,7 +53,7 @@ colorscheme Tomorrow
 
 " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
-set showtabline=2   "always show tabs bar
+set showtabline=0   "always show tabs bar
 set number          "show line numbers
 set showmatch       "show matching braces
 set ttyfast
