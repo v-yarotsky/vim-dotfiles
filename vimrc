@@ -2,7 +2,6 @@
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-ruby-debugger')
 call add(g:pathogen_disabled, 'vim-git-gutter')
-call add(g:pathogen_disabled, 'Auto-Pairs')
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -38,7 +37,8 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-colorscheme Tomorrow
+"colorscheme Tomorrow
+colorscheme darkspectrum
 " if $ITERM_COLORS ==? "solarized-light"
 "   set background=light
 "   let g:soliarized_termcolors=256

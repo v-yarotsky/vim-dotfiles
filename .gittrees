@@ -1,36 +1,11 @@
-[subtree "bundle/Auto-Pairs"]
-  url = git@github.com:jiangmiao/auto-pairs.git
-  path = bundle/Auto-Pairs
-  branch = master
-
-[subtree "bundle/Command-T"]
-  url = git@github.com:wincent/Command-T.git
-  path = bundle/Command-T
-  branch = master
-
 [subtree "bundle/ack.vim"]
   url = git@github.com:mileszs/ack.vim.git
   path = bundle/ack.vim
   branch = master
 
-[subtree "bundle/getafe"]
-  url = git@github.com:julienXX/getafe.git
-  path = bundle/getafe
-  branch = master
-
-[subtree "bundle/javaScriptLint.vim"]
-  url = git@github.com:smith/javaScriptLint.vim.git
-  path = bundle/javaScriptLint.vim
-  branch = master
-
 [subtree "bundle/matchit"]
   url = git@github.com:tsaleh/vim-matchit.git
   path = bundle/matchit
-  branch = master
-
-[subtree "bundle/molokai"]
-  url = git@github.com:tomasr/molokai.git
-  path = bundle/molokai
   branch = master
 
 [subtree "bundle/nerdtree"]
@@ -118,10 +93,6 @@
   path = bundle/vim-unimpaired
   branch = master
 
-[subtree "bundle/CamelCaseMotion"]
-	url = https://github.com/bkad/CamelCaseMotion.git
-	path = bundle/CamelCaseMotion
-	branch = master
 [subtree "bundle/tlib_vim"]
 	url = https://github.com/tomtom/tlib_vim.git
 	path = bundle/tlib_vim
@@ -130,14 +101,6 @@
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 	path = bundle/vim-addon-mw-utils
 	branch = master
-[subtree "bundle/vim-notes"]
-	url = https://github.com/xolox/vim-notes.git
-	path = bundle/vim-notes
-	branch = master
-[subtree "bundle/vim-ruby-refactoring"]
-	url = https://github.com/ecomba/vim-ruby-refactoring.git
-	path = bundle/vim-ruby-refactoring
-	branch = master
 [subtree "bundle/vim-bclose"]
 	url = https://github.com/rwfitzge/vim-bclose
 	path = bundle/vim-bclose
@@ -145,10 +108,6 @@
 [subtree "bundle/darkspectrum"]
 	url = https://github.com/jeremycw/darkspectrum
 	path = bundle/darkspectrum
-	branch = master
-[subtree "bundle/number-marks"]
-	url = https://github.com/vim-scripts/number-marks
-	path = bundle/number-marks
 	branch = master
 [subtree "bundle/vimux"]
 	url = https://github.com/benmills/vimux.git
