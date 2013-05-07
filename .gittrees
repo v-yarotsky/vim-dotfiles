@@ -1,8 +1,3 @@
-[subtree "bundle/ack.vim"]
-  url = git@github.com:mileszs/ack.vim.git
-  path = bundle/ack.vim
-  branch = master
-
 [subtree "bundle/matchit"]
   url = git@github.com:tsaleh/vim-matchit.git
   path = bundle/matchit

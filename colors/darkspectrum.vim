@@ -50,7 +50,7 @@ hi vimFold		guibg=#000000 ctermbg=0 guifg=#FFFFFF ctermfg=15 gui=bold cterm=bold
 hi FoldColumn	guibg=#000000 ctermbg=0 guifg=#FFFFFF ctermfg=15 gui=bold cterm=bold
 
 hi LineNr		guifg=#535353 ctermfg=239 guibg=#202020 ctermbg=234
-hi NonText		guifg=#535353 ctermfg=239 guibg=#202020 ctermbg=234
+hi NonText		guifg=#535353 ctermfg=235 guibg=#202020 ctermbg=235
 hi Folded		guifg=#535353 ctermfg=239 guibg=#202020 ctermbg=234 gui=bold cterm=bold
 hi FoldeColumn  guifg=#535353 ctermfg=239 guibg=#202020 ctermbg=234 gui=bold cterm=bold
 "hi VertSplit	guibg=#ffffff ctermbg=15 guifg=#ffffff ctermfg=15 gui=none
@@ -93,7 +93,7 @@ hi WildMenu     guifg=#ffffff ctermfg=15 guibg=#3465a4 ctermbg=61 gui=none
 hi Pmenu        guibg=#000000 ctermbg=0 guifg=#c0c0c0 ctermfg=250
 hi PmenuSel     guibg=#3465a4 ctermbg=61 guifg=#ffffff ctermfg=15
 hi PmenuSbar    guibg=#444444 ctermbg=238 guifg=#444444 ctermfg=238
-hi PmenuThumb   guibg=#888888 ctermbg=102 guifg=#888888 ctermfg=102 
+hi PmenuThumb   guibg=#888888 ctermbg=102 guifg=#888888 ctermfg=102
 
 hi cppSTLType   guifg=#729fcf ctermfg=74 gui=bold cterm=bold
 

@@ -1,7 +1,6 @@
 "==================================================pathogen
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-ruby-debugger')
-call add(g:pathogen_disabled, 'vim-git-gutter')
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -75,10 +74,10 @@ set lazyredraw
 set shiftround
 
 "==================================================mappings
-command WQ wq
-command Wq wq
-command W w
-command Q q
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
 
 cnoreabbrev tx tabclose
 cnoreabbrev tc tabnew
@@ -117,20 +116,13 @@ cmap w!! w !sudo tee % >&-
 
 "==================================================gui settings
 if has("gui_running")
-  set background=light
-  let g:soliarized_termcolors=256
-  colorscheme solarized
+  colorscheme Tomorrow-Night
 
   set guicursor=a:blinkon0
   set guifont=Consolas\ for\ Powerline:h12
   set guioptions-=r
   set guioptions-=T
   set guioptions-=L
-
-  " set cursorline
-
-  map <C-j> :tabprevious<CR>
-  map <C-k> :tabnext<CR>
 
   inoremap <S-CR> <C-O>o
 endif
@@ -141,7 +133,7 @@ for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
 endfor
 
 set tags += "tmp/tags"
-map <C-r><C-t> :!bundle list --paths=true \| xargs ctags -f tmp/tags -R --exclude=.git --exclude=.tmp --exclude=log --langmap="ruby:+.rake.builder.rjs" `pwd`/*<CR><CR>
+map <C-r><C-t> :!bundle list --paths=true \| xargs ctags -f tmp/tags -R --exclude=.git --exclude=tmp --exclude=log --langmap="ruby:+.rake.builder.rjs" `pwd`/*<CR><CR>
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -174,10 +166,12 @@ imap <c-e> <c-o>$
 
 nmap <S-Z><S-X> :q!<CR>
 
+let g:agprg="ag --nogroup --column --skip-vcs-ignores"
+
 nmap ,, :RelatedOpenFile<CR>
 nmap , :RelatedRunTest<CR>
-nmap  :ACK<CR>
-vnoremap  "hy:Ack! <C-r>h<CR>
+nmap  :AG<CR>
+vnoremap  "hy:Ag! <C-r>h<CR>
 
 nmap <leader>e :!%<CR>
 nmap <leader>w :w<CR>
