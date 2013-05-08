@@ -96,6 +96,7 @@ if has("gui_running")
   vmap <C-Up> [e`[V`]
   vmap <C-Down> ]e`[V`]
 else
+  map <Esc>[B <Down>
   nmap [A [e
   nmap [B ]e
   vmap [A [e`[V`]
