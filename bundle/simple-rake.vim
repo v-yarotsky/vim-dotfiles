@@ -1,1 +1,1 @@
-/Users/vladimiryarotsky/Projects/simple-rake.vim
+/Users/v-yarotsky/Projects/simple-rake.vim

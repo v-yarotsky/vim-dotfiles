@@ -1,1 +1,1 @@
-/Users/vladimiryarotsky/Projects/askag.vim
+/Users/v-yarotsky/Projects/askag.vim

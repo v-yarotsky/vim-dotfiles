@@ -1,1 +1,1 @@
-/Users/vladimiryarotsky/Projects/related.vim
+/Users/v-yarotsky/Projects/related.vim

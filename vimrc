@@ -1,6 +1,8 @@
 "==================================================pathogen
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'vim-ruby-debugger')
+"call add(g:pathogen_disabled, 'nerdtree')
+"call add(g:pathogen_disabled, 'vim-nerdtree-tabs')
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -37,7 +39,9 @@ let ruby_fold=1
 
 "==================================================look & feel
 "colorscheme Tomorrow
-colorscheme darkspectrum
+set background=dark
+let g:solarzed_termcolors=16
+colorscheme Tomorrow-Night
 " if $ITERM_COLORS ==? "solarized-light"
 "   set background=light
 "   let g:soliarized_termcolors=256
@@ -174,5 +178,16 @@ nmap , :RelatedRunTest<CR>
 nmap  :AG<CR>
 vnoremap  "hy:Ag! <C-r>h<CR>
 
-nmap <leader>e :!%<CR>
-nmap <leader>w :w<CR>
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        exec ':Bclose'
+        exec ':e ' . new_name
+        redraw!
+    endif
+endfunction
+command! RenameFile :call RenameFile()
+
