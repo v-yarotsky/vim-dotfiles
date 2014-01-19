@@ -1,8 +1,6 @@
 "==================================================pathogen
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-ruby-debugger')
-"call add(g:pathogen_disabled, 'nerdtree')
-"call add(g:pathogen_disabled, 'vim-nerdtree-tabs')
+call add(g:pathogen_disabled, 'vim-git-gutter')
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -38,30 +36,18 @@ let ruby_fold=1
 
 
 "==================================================look & feel
-"colorscheme Tomorrow
 set background=dark
 let g:solarzed_termcolors=16
 colorscheme Tomorrow-Night
-" if $ITERM_COLORS ==? "solarized-light"
-"   set background=light
-"   let g:soliarized_termcolors=256
-"   colorscheme solarized
-"   hi NonText cterm=NONE ctermfg=white ctermbg=white
-" elseif $ITERM_COLORS ==? "darkspectrum"
-"   colorscheme darkspectrum
-"   hi NonText cterm=NONE ctermfg=235 ctermbg=235
-" else
-"   colorscheme molokai
-" endif
 
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%=%-16(\ %l,%c-%v\ %)%P
 set laststatus=2    "always show statusbar
 set showtabline=0   "always show tabs bar
 set number          "show line numbers
+set relativenumber  "show line numbers relative to current
 set showmatch       "show matching braces
 set ttyfast
 set t_Co=256        "set 256 colors mode
-set incsearch
+set incsearch       "turn on incremental search
 set foldlevel=100
 set backspace=indent,eol,start
 set scrolloff=3
@@ -83,16 +69,10 @@ command! Wq wq
 command! W w
 command! Q q
 
-cnoreabbrev tx tabclose
-cnoreabbrev tc tabnew
-
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 nmap <leader>vr :source $MYVIMRC<CR>
 
 nnoremap t* :set hlsearch! hlsearch?<CR>
-
-inoremap ;; <C-O>A;
-inoremap ,, <C-O>A,
 
 if has("gui_running")
   nmap <C-Up> [e
@@ -111,11 +91,8 @@ end
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-"split line
-nmap \ls i<CR><ESC>
-
 "write file as sudo
-cmap w!! w !sudo tee % >&-
+cmap w!! w !sudo tee % >&-<CR>
 
 
 
@@ -162,19 +139,12 @@ nnoremap <cr> :nohlsearch<cr>
 "emacs-style line begin and end
 imap <c-a> <c-o>^
 imap <c-e> <c-o>$
-
-" Russian keymap FTW; switch with C-^
-" set keymap=russian-jcukenwin
-" set iminsert=0
-" set imsearch=0
-" highlight lCursor guifg=NONE guibg=Cyan
-
 nmap <S-Z><S-X> :q!<CR>
-
-let g:agprg="ag --nogroup --column --skip-vcs-ignores"
 
 nmap ,, :RelatedOpenFile<CR>
 nmap , :RelatedRunTest<CR>
+
+let g:agprg="ag --nogroup --column --skip-vcs-ignores"
 nmap  :AG<CR>
 vnoremap  "hy:Ag! <C-r>h<CR>
 
@@ -191,3 +161,13 @@ function! RenameFile()
 endfunction
 command! RenameFile :call RenameFile()
 
+"Paste nicely
+map <leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
+
+"Auto-resize focused/unfocused splits
+
+set winwidth=84
+set winminwidth=24
+set winheight=5
+set winminheight=5
+set winheight=999
