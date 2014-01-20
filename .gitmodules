@@ -1,12 +1,3 @@
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline
-[submodule "bundle/ag.vim"]
-	path = bundle/ag.vim
-	url = https://github.com/epmatsw/ag.vim
-[submodule "bundle/dash.vim"]
-	path = bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
-[submodule "bundle/funcoo.vim"]
-	path = bundle/funcoo.vim
-	url = https://github.com/rizzatti/funcoo.vim.git
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/vundle.git

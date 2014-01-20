@@ -11,7 +11,6 @@ UltiSnips                                      *snippet* *snippets* *UltiSnips*
 3. Settings & Commands                          |UltiSnips-settings|
    3.1 Commands                                 |UltiSnips-commands|
    3.2 Triggers                                 |UltiSnips-triggers|
-      3.2.1 Using your own trigger functions    |UltiSnips-trigger-functions|
    3.3 Snippet Search Path                      |UltiSnips-snippet-search-path|
    3.4 Warning About Select Mode Mappings       |UltiSnips-warning-smappings|
    3.5 Functions                                |UltiSnips-functions|
@@ -85,16 +84,9 @@ They print '1' if the python version is compiled in, '0' if not.
 
 Test if Vim is compiled with python version 2.x: >
     :echo has("python")
-The python version Vim is linked agains can be found with: >
-    :py import sys; print(sys.version)
 
 Test if Vim is compiled with python version 3.x: >
     :echo has("python3")
-The python version Vim is linked agains can be found with: >
-    :py3 import sys; print(sys.version)
-
-Note that Vim is maybe not using your system wide installed python version, so
-make sure to check the Python version inside of Vim.
 
 UltiSnips attempts to autodetect which python version is compiled into Vim.
 Unfortunately, in some versions of Vim this detection does not work.
@@ -127,7 +119,7 @@ If you are a pathogen user, you can track the official mirror of UltiSnips on
 github: >
 
    $ cd ~/.vim/
-   $ git submodule add git://github.com/SirVer/ultisnips.git bundle/ultisnips
+   $ git submodule add https://github.com/sirver/ultisnips bundle/ultisnips
 
 See the pathogen documentation for more details on how to update a bundle.
 
@@ -146,12 +138,6 @@ Using bzr, checkout UltiSnips into a directory of your choice. >
 Then add this directory to your Vim runtime path by adding this line to your
 vimrc file. >
    set runtimepath+=~/.vim/ultisnips_rep
-
-UltiSnips also needs that Vim sources files from the ftdetect/ directory.
-Unfortunately, Vim only allows this directory in the .vim directory. You
-therefore have to symlink/copy the files: >
-   mkdir -p ~/.vim/ftdetect/
-   ln -s ~/.vim/ultisnips_rep/ftdetect/* ~/.vim/ftdetect/
 
 Restart Vim and UltiSnips should work. To access the help, use >
    :helptags ~/.vim/ultisnips_rep/doc
@@ -237,50 +223,6 @@ vimrc file. >
    let g:UltiSnipsJumpForwardTrigger="<tab>"
    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-3.2.1 Using your own trigger functions           *UltiSnips-trigger-functions*
---------------------------------------
-
-For advanced users there are four functions that you can map directly to a 
-key and that correspond to some of the triggers previously defined:
-   g:UltiSnipsExpandTrigger        <--> UltiSnips_ExpandSnippet
-   g:UltiSnipsJumpForwardTrigger   <--> UltiSnips_JumpForwards
-   g:UltiSnipsJumpBackwardTrigger  <--> UltiSnips_JumpBackwards
-
-If you have g:UltiSnipsExpandTrigger and g:UltiSnipsJumpForwardTrigger set
-to the same value then when the function you are actually going to use is
-UltiSnips_ExpandSnippetOrJump.
-
-Each time any of the functions UltiSnips_ExpandSnippet,
-UltiSnips_ExpandSnippet, UltiSnips_JumpBackwards or UltiSnips_JumpBackwards is
-called a global variable is set that contains the corresponding return value
-of the corresponding function.
-
-The corresponding variables and functions are:
-UltiSnips_ExpandSnippet       --> g:ulti_expand_res (0: fail, 1: success)
-UltiSnips_ExpandSnippetOrJump --> g:ulti_expand_or_jump_res (0: fail,
-                                                    1: expand, 2: jump)
-UltiSnips_JumpForwards        --> g:ulti_jump_forwards_res (0: fail, 1: success)
-UltiSnips_JumpBackwards       --> g:ulti_jump_backwards_res (0: fail, 1: success)
-
-To see how these return values may come in handy suppose that you want to map
-a key to expand or jump, but if none of these actions is successful you want
-to call another function. Ultisnips already does this automaticall for supertab, but
-this allows you individual fine tuning of your tab key usage.
-
-Usage is as follows: You define a function >
-
-   let g:ulti_expand_or_jump_res = 0 "default value, just set once
-   function! Ulti_ExpandOrJump_and_getRes()
-     call UltiSnips_ExpandSnippetOrJump()
-     return g:ulti_expand_or_jump_res
-   endfunction
-
-then you define your mapping as >
-
-   inoremap <NL> <C-R>=(Ulti_ExpandOrJump_and_getRes() > 0)?"":IMAP_Jumpfunc('', 0)<CR>
-
-and if the you can't expand or jump from the current location then the
-alternative function IMAP_Jumpfunc('', 0) is called.
 
 3.3 Snippet Search Path                       *UltiSnips-snippet-search-path*
 -----------------------
@@ -551,10 +493,6 @@ The options currently supported are: >
        replaced with spaces.) If this option is set, UltiSnips will ignore the
        Vim settings and insert the tab characters as is. This option is useful
        for snippets involved with tab delimited formats, for example.
-
-   s   Remove whitespace immediately before the cursor at the end of a line
-       before jumping to the next tabstop.  This is useful if there is a
-       tabstop with optional text at the end of a line.
 
 The end line is the 'endsnippet' keyword on a line by itself. >
 
@@ -1226,6 +1164,7 @@ bug tracker where you can report bugs and issues.
 This project aims to be the one-for-all solution for Snippets for Vim. If you
 miss a feature or find a bug, please contact me or file a support ticket.
 
+
 =============================================================================
 7. Contributors                                      *UltiSnips-contributors*
 
@@ -1261,11 +1200,7 @@ Contributors listed in chronological order:
    lucapette
    Psycojoker - Laurent Peuch 
    aschrab - Aaron Schrab
-   stardiviner - NagatoPain
-   skeept - Jorge Rodrigues
-   buztard
-   stephenmckinney - Steve McKinney
-   Pedro Algarvio - s0undt3ch
+   NagatoPain (stardiviner)
 
 
 7.2 Snippets                                       *UltiSnips-contrisnippets*
@@ -1281,7 +1216,7 @@ Contributors listed in chronological order:
    Georgi Valkov (gvalkov)
    Miek Gieben (miek)
    Aldis Berjoza (graudeejs)
-   Jorge Rodrigues (skeept)
+   Jorge (skeept)
    Martin Grenfell (scrooloose)
    Laughedelic
    Anthony Wilson (anthonywilson)
@@ -1294,12 +1229,6 @@ Contributors listed in chronological order:
    Jacek Wysocki (exu)
    Alexander Kondratskiy (KholdStare)
    Martin Krauskopf (martin-krauskopf)
-   Theocrite (theocrite)
-   Ferdinand Majerech (kiith-sa)
-   Vivien Didelot
-   Øystein Walle (osse)
-   Pedro Algarvio (s0undt3ch)
-   Steven Humphrey (shumphrey)
 
 Thank you for your support.
 

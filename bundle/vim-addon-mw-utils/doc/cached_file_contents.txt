@@ -1,4 +1,4 @@
-*cached_file_contents*  read contents of a file then cache extracted data
+*funcref*  read contents of a file then cache extracted data
                     Author: Marc Weber, marco-oweber@gmx.de
 
 -----------------------------------------------------------------------

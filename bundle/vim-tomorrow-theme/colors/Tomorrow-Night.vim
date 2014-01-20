@@ -272,7 +272,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("Todo", s:yellow, s:background, "")
+	call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
 	call <SID>X("Statement", s:foreground, "", "")
@@ -323,7 +323,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("pythonInclude", s:purple, "", "")
 	call <SID>X("pythonStatement", s:purple, "", "")
 	call <SID>X("pythonConditional", s:purple, "", "")
+	call <SID>X("pythonRepeat", s:purple, "", "")
+	call <SID>X("pythonException", s:purple, "", "")
 	call <SID>X("pythonFunction", s:blue, "", "")
+
+	" CoffeeScript Highlighting
+	call <SID>X("coffeeKeyword", s:purple, "", "")
+	call <SID>X("coffeeConditional", s:purple, "", "")
 
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
@@ -333,9 +339,21 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")
 
+	" HTML Highlighting
+	call <SID>X("htmlTag", s:red, "", "")
+	call <SID>X("htmlTagName", s:red, "", "")
+	call <SID>X("htmlArg", s:red, "", "")
+	call <SID>X("htmlScriptTag", s:red, "", "")
+
 	" Diff Highlighting
+  let s:diffbackground = "494e56"
+
 	call <SID>X("diffAdded", s:green, "", "")
 	call <SID>X("diffRemoved", s:red, "", "")
+  call <SID>X("DiffAdd", s:green, s:diffbackground, "")
+  call <SID>X("DiffDelete", s:red, s:diffbackground, "")
+  call <SID>X("DiffChange", s:yellow, s:diffbackground, "")
+  call <SID>X("DiffText", s:diffbackground, s:orange, "")
 
     " ShowMarks Highlighting
     call <SID>X("ShowMarksHLl", s:orange, s:background, "none")

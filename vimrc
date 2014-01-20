@@ -1,9 +1,46 @@
-"==================================================pathogen
-let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'vim-git-gutter')
+"==================================================vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-call pathogen#infect()
-call pathogen#helptags()
+Bundle 'gmarik/vundle'
+
+Bundle 'airblade/vim-gitgutter'
+Bundle 'bling/vim-airline'
+Bundle 'bufkill.vim'
+Bundle 'bundler'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'commentary.vim'
+Bundle 'ctrlp.vim'
+Bundle 'fugitive.vim'
+Bundle 'gitignore'
+Bundle 'go.vim'
+Bundle 'marcweber/vim-addon-mw-utils'
+Bundle 'matchit.zip'
+Bundle 'noprompt/vim-yardoc'
+Bundle 'rails.vim'
+Bundle 'repeat.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rking/ag.vim'
+Bundle 'ruby.vim'
+Bundle 'Simple-Javascript-Indenter'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'splitjoin.vim'
+Bundle 'SuperTab'
+Bundle 'surround.vim'
+Bundle 'Tabular'
+Bundle 'textobj-rubyblock'
+Bundle 'textobj-user'
+Bundle 'tinykeymap'
+Bundle 'tlib'
+Bundle 'UltiSnips'
+Bundle 'unimpaired.vim'
+Bundle 'vim-coffee-script'
+
+Bundle 'file:///Users/v-yarotsky/Projects/askag.vim'
+Bundle 'file:///Users/v-yarotsky/Projects/related.vim'
+Bundle 'file:///Users/v-yarotsky/Projects/simple-rake.vim'
 
 "==================================================general settings
 filetype plugin indent on

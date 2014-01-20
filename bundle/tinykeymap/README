@@ -1,3 +1,5 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4199
+
 This plugin is a 90% clone of Andy Wokula's tinymode (vimscript #2223). 
 It takes a different approach that hopefully avoids certain problems 
 without creating new ones. tinymode actually creates maps to do its job, 
@@ -10,11 +12,18 @@ activate a tinykeymap. Users can then use single key shortcuts to
 trigger commands defined with |tinykeymap#Map()|. Pressing an undefined 
 key or <Esc>, deactivates the tinykeymap.
 
-Example usage: Define a tinykeymap to make it easier to ...
+tinykeymap comes with some example maps to make it easier to ...
 
-    - operate on windows
-    - operate on tabs
-    - operate on text
+    buffers ... navigate/operate on buffers
+    diff    ... navigate/operate on |diff|s
+    filter  ... "filter" text in a buffer using folds
+    lines   ... navigate/operate on lines (similar to vimscript #4140)
+    loc     ... navigate the |location-list|
+    qfl     ... navigate the |quickfix| list
+    tabs    ... navigate/operate on tabs
+    undo    ... navigate/operate on the undo tree (with optional support for 
+                vimscript #4177)
+    windows ... navigate/operate on windows
 
 Example definition for a "tabs" tinykeymap (heavily based on Andy 
 Wokula's tabs mode for tinymode): >
@@ -38,9 +47,7 @@ Example use of the above tinykeymap: E.g. pressing gt3n^c2t will:
 A tinykeymap is exited (1) by pressing <Esc> or (2) by timeout (see 
 |g:tinykeymap#timeout|).
 
-tinykeymap comes with the following pre-defined tinykeymaps (see 
-|g:tinykeymap#mapleader| and the related g:tinykeymap#*#map variables for how 
-to customize the key binding):
+tinykeymap comes with the following pre-defined tinykeymaps:
 
     tabs    gt         :: Operate on tabs
     windows <C-W>      :: Operate on windows
@@ -61,14 +68,4 @@ Differences to tinymode:
       placeholder is replaced with the current [count], i.e. a 
       previously entered number; otherwise the expression is evaluated 
       [count] times)
-    - avoid a certain misleading error message
-
-submode (vimscript #2467) is another package that provides similar 
-functionality.
-
------------------------------------------------------------------------
-
-Status:  Experimental
-Install: See http://github.com/tomtom/vimtlib/blob/master/INSTALL.TXT
-See http://github.com/tomtom for related plugins.
 

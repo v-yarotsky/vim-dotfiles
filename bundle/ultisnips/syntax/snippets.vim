@@ -15,7 +15,7 @@ syn keyword snipTODO FIXME NOTE NOTES TODO XXX contained
 syn match snipString '"[^"]*"'
 syn match snipTabsOnly "^\t\+$"
 
-syn match snipKeyword "\(\<\(end\)\?\(snippet\|global\)\>\)\|extends\|clearsnippets" contained
+syn match snipKeyword "\(\<\(end\)\?\(snippet\|global\)\>\)\|extends" contained
 
 " extends definitions
 syn match snipExtends "^extends.*" contains=snipKeyword
@@ -35,9 +35,6 @@ syn region snippet fold keepend start="^snippet" end="^endsnippet" contains=snip
 syn match snipGlobalStart "^global.*" contained contains=snipKeyword,snipString
 syn match snipGlobalEnd "^endglobal" contained contains=snipKeyword
 syn region snipGlobal fold keepend start="^global" end="^endglobal" contains=snipGlobalStart,snipGlobalEnd,snipTabsOnly,snipCommand,snipVarExpansion,snipVar,@Python
-
-" snippet clearing
-syn match snipClear "^clearsnippets"
 
 " highlighting rules
 
@@ -60,7 +57,5 @@ hi link snippet          Normal
 hi link snipGlobalStart  Statement
 hi link snipGlobalEnd    Statement
 hi link snipGlobal       Normal
-
-hi link snipClear        Statement
 
 let b:current_syntax = "snippet"
