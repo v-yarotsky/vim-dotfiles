@@ -1,5 +1,0 @@
-To update a plugin:
-git subtree pull --prefix bundle/<plugin-name> https://github.com/author/plugin.git master --squash
-
-To add a plugin:
-git subtree add --prefix bundle/<plugin-name> https://github.com/author/plugin.git master --squash

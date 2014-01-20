@@ -1,6 +1,7 @@
 tmp/
 tags
-bundle/vim-notes/misc/notes/*
 .netrwhist
 view/
-bundle/ri.vim/plugin/ri_vim_cache
+.DS_Store
+bundle/
+
