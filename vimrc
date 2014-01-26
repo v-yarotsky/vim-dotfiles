@@ -8,7 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'bufkill.vim'
-Bundle 'bundler'
+Bundle 'tpope/vim-bundler'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'commentary.vim'
 Bundle 'ctrlp.vim'
@@ -23,7 +23,7 @@ Bundle 'repeat.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'ack.vim'
-Bundle 'ruby.vim'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'Simple-Javascript-Indenter'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'splitjoin.vim'
@@ -62,7 +62,7 @@ set shiftwidth=2
 set expandtab
 
 set shell=/bin/sh
-set grepprg=ag
+set grepprg=ack
 
 set clipboard=unnamed
 
@@ -138,7 +138,7 @@ if has("gui_running")
   colorscheme Tomorrow-Night
 
   set guicursor=a:blinkon0
-  set guifont=Consolas\ for\ Powerline:h12
+  set guifont=Menlo\ Regular\ for\ Powerline:h12
   set guioptions-=r
   set guioptions-=T
   set guioptions-=L
