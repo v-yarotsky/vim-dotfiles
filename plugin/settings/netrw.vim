@@ -1,4 +1,3 @@
+let g:netrw_banner=0
 let g:netrw_localrmdir="rm -r"
-map <Leader>e :e <C-R>=expand("%:p:h") . "/"<CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . "/"<CR>
-map <Leader>v :vnew <C-R>=expand("%:p:h") . "/"<CR>
+nmap <C-d> :e <C-R>=expand("%:p:h") . "/"<CR>

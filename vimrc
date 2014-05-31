@@ -1,53 +1,43 @@
 "==================================================vundle
+set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-airline'
-Bundle 'bufkill.vim'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rake'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'commentary.vim'
-Bundle 'ctrlp.vim'
-Bundle 'fugitive.vim'
-Bundle 'gitignore'
-Bundle 'go.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'matchit.zip'
-Bundle 'noprompt/vim-yardoc'
-Bundle 'rails.vim'
-Bundle 'repeat.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'ack.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'Simple-Javascript-Indenter'
-Bundle 'slim-template/vim-slim.git'
-Bundle 'splitjoin.vim'
-Bundle 'SuperTab'
-Bundle 'surround.vim'
-Bundle 'Tabular'
-Bundle 'textobj-rubyblock'
-Bundle 'textobj-user'
-Bundle 'tinykeymap'
-Bundle 'tlib'
-Bundle 'UltiSnips'
-Bundle 'unimpaired.vim'
-Bundle 'vim-coffee-script'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rake'
+Plugin 'commentary.vim'
+Plugin 'ctrlp.vim'
+Plugin 'fugitive.vim'
+Plugin 'gitignore'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'matchit.zip'
+Plugin 'rails.vim'
+Plugin 'repeat.vim'
+Plugin 'ack.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'Simple-Javascript-Indenter'
+Plugin 'splitjoin.vim'
+Plugin 'SuperTab'
+Plugin 'surround.vim'
+Plugin 'Tabular'
+Plugin 'textobj-rubyblock'
+Plugin 'textobj-user'
+Plugin 'tlib'
+Plugin 'UltiSnips'
+Plugin 'unimpaired.vim'
+Plugin 'vim-coffee-script'
+Plugin 'VimClojure'
 
-Bundle 'file:///Users/v-yarotsky/Projects/askag.vim'
-Bundle 'file:///Users/v-yarotsky/Projects/related.vim'
-Bundle 'file:///Users/v-yarotsky/Projects/simple-rake.vim'
+call vundle#end()
 
 "==================================================general settings
 filetype plugin indent on
 syntax on
-syntax sync minlines=256
-set nocompatible
 set hidden
 set bufhidden=delete
 set exrc
@@ -60,6 +50,7 @@ set dir=$HOME/.vim/tmp/
 
 set softtabstop=2
 set shiftwidth=2
+set shiftround "use multiple of shiftwidth when indenting with '<' and '>'
 set expandtab
 
 set shell=/bin/sh
@@ -70,23 +61,21 @@ set clipboard=unnamed
 "==================================================ruby specifig settings
 compiler ruby
 let ruby_fold=1
+set foldlevel=99
 
 
 
 "==================================================look & feel
 set background=dark
-let g:solarzed_termcolors=16
-colorscheme Tomorrow-Night
 
 set laststatus=2    "always show statusbar
-set showtabline=0   "always show tabs bar
+set showtabline=1   "always show tabs bar
 set number          "show line numbers
 set relativenumber  "show line numbers relative to current
 set showmatch       "show matching braces
 set ttyfast
 set t_Co=256        "set 256 colors mode
 set incsearch       "turn on incremental search
-set foldlevel=100
 set backspace=indent,eol,start
 set scrolloff=3
 au InsertEnter * hi StatusLine term=reverse ctermbg=234
@@ -96,56 +85,11 @@ set wildmenu
 set wildmode=longest,list
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
 
-" set completeopt=longest,menuone
-
-set lazyredraw
-set shiftround
-
 "==================================================mappings
-command! WQ wq
-command! Wq wq
-command! W w
-command! Q q
-
 nmap <leader>ve :tabedit $MYVIMRC<CR>
-nmap <leader>vr :source $MYVIMRC<CR>
-
-nnoremap t* :set hlsearch! hlsearch?<CR>
-
-if has("gui_running")
-  nmap <C-Up> [e
-  nmap <C-Down> ]e
-  vmap <C-Up> [e`[V`]
-  vmap <C-Down> ]e`[V`]
-else
-  map <Esc>[B <Down>
-  nmap [A [e
-  nmap [B ]e
-  vmap [A [e`[V`]
-  vmap [B ]e`[V`]
-end
-
 
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-"write file as sudo
-cmap w!! w !sudo tee % >&-<CR>
-
-
-
-"==================================================gui settings
-if has("gui_running")
-  colorscheme Tomorrow-Night
-
-  set guicursor=a:blinkon0
-  set guifont=Menlo\ Regular\ for\ Powerline:h12
-  set guioptions-=r
-  set guioptions-=T
-  set guioptions-=L
-
-  inoremap <S-CR> <C-O>o
-endif
 
 "==================================================plugins settings
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
@@ -172,19 +116,9 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Kill escape delay
 set timeoutlen=300 ttimeoutlen=0
 
-nnoremap <cr> :nohlsearch<cr>
-
 "emacs-style line begin and end
 imap <c-a> <c-o>^
 imap <c-e> <c-o>$
-nmap <S-Z><S-X> :q!<CR>
-
-nmap ,, :RelatedOpenFile<CR>
-nmap , :RelatedRunTest<CR>
-
-let g:agprg="ag --nogroup --column --skip-vcs-ignores"
-nmap  :AG<CR>
-vnoremap  "hy:Ag! <C-r>h<CR>
 
 function! RenameFile()
     let old_name = expand('%')
@@ -192,20 +126,16 @@ function! RenameFile()
     if new_name != '' && new_name != old_name
         exec ':saveas ' . new_name
         exec ':silent !rm ' . old_name
-        exec ':Bclose'
         exec ':e ' . new_name
+        exec ':bd #'
         redraw!
     endif
 endfunction
 command! RenameFile :call RenameFile()
 
-"Paste nicely
-map <leader>p :set paste<CR>o<ESC>"*]p:set nopaste<CR>
-
-"Auto-resize focused/unfocused splits
-
-set winwidth=84
-set winminwidth=24
-set winheight=5
-set winminheight=5
-set winheight=999
+" Close buffer without closing window
+function! BufClose()
+  exec ':bp | bd #'
+endfunction
+command! BC :call BufClose()
+cabbrev bc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'BC' : 'bc')<CR>

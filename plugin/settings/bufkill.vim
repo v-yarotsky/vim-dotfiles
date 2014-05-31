@@ -1,1 +1,0 @@
-cnoreabbrev bd BD
