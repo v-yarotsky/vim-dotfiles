@@ -4,8 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
+Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-bundler'
@@ -22,16 +23,18 @@ Plugin 'ack.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'Simple-Javascript-Indenter'
 Plugin 'splitjoin.vim'
-Plugin 'SuperTab'
+Plugin 'ervandew/SuperTab'
 Plugin 'surround.vim'
 Plugin 'Tabular'
 Plugin 'textobj-rubyblock'
 Plugin 'textobj-user'
 Plugin 'tlib'
-Plugin 'UltiSnips'
+Plugin 'SirVer/UltiSnips'
 Plugin 'unimpaired.vim'
 Plugin 'vim-coffee-script'
 Plugin 'VimClojure'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'v-yarotsky/askack.vim'
 
 call vundle#end()
 
@@ -67,6 +70,7 @@ set foldlevel=99
 
 "==================================================look & feel
 set background=dark
+colorscheme Tomorrow-Night
 
 set laststatus=2    "always show statusbar
 set showtabline=1   "always show tabs bar
@@ -78,12 +82,15 @@ set t_Co=256        "set 256 colors mode
 set incsearch       "turn on incremental search
 set backspace=indent,eol,start
 set scrolloff=3
+set lazyredraw
 au InsertEnter * hi StatusLine term=reverse ctermbg=234
 au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
 set wildmenu
 set wildmode=longest,list
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
+
+set completeopt=longest,menuone
 
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
@@ -119,6 +126,13 @@ set timeoutlen=300 ttimeoutlen=0
 "emacs-style line begin and end
 imap <c-a> <c-o>^
 imap <c-e> <c-o>$
+nmap <S-Z><S-X> :q!<CR>
+
+nmap ,, :RelatedOpenFile<CR>
+nmap , :RelatedRunTest<CR>
+
+nmap  :ACK<CR>
+vnoremap  "hy:Ack <C-r>h<CR>
 
 function! RenameFile()
     let old_name = expand('%')
