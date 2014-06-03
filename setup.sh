@@ -34,20 +34,21 @@ function run_or_fail() {
   [[ $SHOW_STDOUT && $command_out ]] && echo -e "\n$command_out\n" || true
 }
 
-VUNDLE_REPO="https://github.com/gmarik/vundle.git"
+VUNDLE_REPO="https://github.com/gmarik/Vundle.vim.git"
+VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
 
 echo_step "Creating bundle directory (if it does not exist)"
-run_or_fail "mkdir -p bundle"
+run_or_fail "mkdir -p $VUNDLE_DIR"
 
 if [ ! -d bundle/vundle ]; then
-  echo_step "Cloning vundle repo to bundle/vundle"
-  run_or_fail "git clone $VUNDLE_REPO bundle/vundle"
+  echo_step "Cloning vundle repo to $VUNDLE_DIR"
+  run_or_fail "git clone $VUNDLE_REPO $VUNDLE_DIR"
 else
-  echo "bundle/vundle exists. Skipping clone."
+  echo "$VUNDLE_DIR exists. Skipping clone."
 fi
 
 echo_step "Installing plugins..."
-run_or_fail "vim +BundleInstall +qall"
+run_or_fail "vim +PluginInstall +qall"
 
 echo "Done."
 
