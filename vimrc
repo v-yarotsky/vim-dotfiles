@@ -1,4 +1,4 @@
-source bundle.vim
+source ~/.vim/bundle.vim
 "==================================================general settings
 syntax on
 set hidden
