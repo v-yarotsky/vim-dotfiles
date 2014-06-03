@@ -40,7 +40,7 @@ VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
 echo_step "Creating bundle directory (if it does not exist)"
 run_or_fail "mkdir -p $VUNDLE_DIR"
 
-if [ ! -d bundle/vundle ]; then
+if [ ! -d "$VUNDLE_DIR" ]; then
   echo_step "Cloning vundle repo to $VUNDLE_DIR"
   run_or_fail "git clone $VUNDLE_REPO $VUNDLE_DIR"
 else
@@ -48,7 +48,7 @@ else
 fi
 
 echo_step "Installing plugins..."
-run_or_fail "vim +PluginInstall +qall"
+run_or_fail "vim -u ~/.vim/bundle.vim +PluginInstall +qall"
 
 echo "Done."
 

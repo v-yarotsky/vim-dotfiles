@@ -1,45 +1,5 @@
-"==================================================vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-rake'
-Plugin 'commentary.vim'
-Plugin 'ctrlp.vim'
-Plugin 'fugitive.vim'
-Plugin 'gitignore'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'matchit.zip'
-Plugin 'rails.vim'
-Plugin 'repeat.vim'
-Plugin 'ack.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'Simple-Javascript-Indenter'
-Plugin 'splitjoin.vim'
-Plugin 'ervandew/SuperTab'
-Plugin 'surround.vim'
-Plugin 'Tabular'
-Plugin 'textobj-rubyblock'
-Plugin 'textobj-user'
-Plugin 'tlib'
-Plugin 'SirVer/UltiSnips'
-Plugin 'unimpaired.vim'
-Plugin 'vim-coffee-script'
-Plugin 'VimClojure'
-Plugin 'Blackrush/vim-gocode'
-Plugin 'v-yarotsky/askack.vim'
-
-call vundle#end()
-
+source bundle.vim
 "==================================================general settings
-filetype plugin indent on
 syntax on
 set hidden
 set bufhidden=delete
@@ -82,7 +42,7 @@ set t_Co=256        "set 256 colors mode
 set incsearch       "turn on incremental search
 set backspace=indent,eol,start
 set scrolloff=3
-set lazyredraw
+"set lazyredraw
 au InsertEnter * hi StatusLine term=reverse ctermbg=234
 au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
