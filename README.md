@@ -1,4 +1,8 @@
 Installation
 ============
 
-Run setup.sh to bootstrap your vim
+```
+git clone https://github.com/v-yarotsky/vim-dotfiles.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+~/.vim/setup.sh
+```
