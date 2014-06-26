@@ -38,7 +38,7 @@ VUNDLE_REPO="https://github.com/gmarik/Vundle.vim.git"
 VUNDLE_DIR="$HOME/.vim/bundle/Vundle.vim"
 
 echo_step "Creating bundle directory (if it does not exist)"
-run_or_fail "mkdir -p $VUNDLE_DIR"
+run_or_fail "mkdir -p `dirname $VUNDLE_DIR`"
 
 if [ ! -d "$VUNDLE_DIR" ]; then
   echo_step "Cloning vundle repo to $VUNDLE_DIR"
