@@ -36,6 +36,9 @@ Plugin 'VimClojure'
 Plugin 'Blackrush/vim-gocode'
 Plugin 'v-yarotsky/askack.vim'
 Plugin 'v-yarotsky/related.vim'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'scrooloose/syntastic'
+Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
 filetype plugin indent on
