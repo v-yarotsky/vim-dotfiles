@@ -47,10 +47,10 @@ au InsertEnter * hi StatusLine term=reverse ctermbg=234
 au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
 set wildmenu
-set wildmode=longest,list
+set wildmode=longest:list,full
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
 
-set completeopt=longest,menuone
+set completeopt=longest,menuone,preview
 
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
