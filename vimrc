@@ -50,7 +50,7 @@ set wildmenu
 set wildmode=longest:list,full
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
 
-set completeopt=longest,menuone,preview
+set completeopt=menu,preview
 
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
@@ -82,11 +82,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Kill escape delay
 set timeoutlen=300 ttimeoutlen=0
-
-"emacs-style line begin and end
-imap <c-a> <c-o>^
-imap <c-e> <c-o>$
-nmap <S-Z><S-X> :q!<CR>
 
 nmap ,, :RelatedOpenFile<CR>
 nmap , :RelatedRunTest<CR>
