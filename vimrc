@@ -42,7 +42,6 @@ set t_Co=256        "set 256 colors mode
 set incsearch       "turn on incremental search
 set backspace=indent,eol,start
 set scrolloff=3
-"set lazyredraw
 au InsertEnter * hi StatusLine term=reverse ctermbg=234
 au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
@@ -86,8 +85,8 @@ set timeoutlen=300 ttimeoutlen=0
 nmap ,, :RelatedOpenFile<CR>
 nmap , :RelatedRunTest<CR>
 
-nmap  :ACK<CR>
-vnoremap  "hy:Ack <C-r>h<CR>
+nmap  :AG<CR>
+vnoremap  "hy:Ag! <C-r>h<CR>
 
 function! RenameFile()
     let old_name = expand('%')
