@@ -22,6 +22,7 @@ Plugin 'repeat.vim'
 Plugin 'ag.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'splitjoin.vim'
 Plugin 'ervandew/SuperTab'
 Plugin 'surround.vim'
@@ -39,7 +40,7 @@ Plugin 'v-yarotsky/askag.vim'
 Plugin 'v-yarotsky/related.vim'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'scrooloose/syntastic'
-Plugin 'wookiehangover/jshint.vim'
+Plugin 'jamessan/vim-gnupg'
 
 call vundle#end()
 filetype plugin indent on
