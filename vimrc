@@ -17,7 +17,7 @@ set shiftround "use multiple of shiftwidth when indenting with '<' and '>'
 set expandtab
 
 set shell=/bin/sh
-set grepprg=ack
+set grepprg=ag\ --nogroup\ --nocolor
 
 set clipboard=unnamed
 
@@ -107,3 +107,5 @@ function! BufClose()
 endfunction
 command! BC :call BufClose()
 cabbrev bc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'BC' : 'bc')<CR>
+
+map \s :execute "! bundle exec rspec " . bufname("%") . ":" . line(".")<CR>
