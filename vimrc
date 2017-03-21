@@ -1,5 +1,6 @@
 source ~/.vim/bundle.vim
 "==================================================general settings
+set re=1 " fall back to old regex engine in ruby
 syntax on
 set hidden
 set bufhidden=delete
@@ -38,6 +39,7 @@ set number          "show line numbers
 set relativenumber  "show line numbers relative to current
 set showmatch       "show matching braces
 set ttyfast
+set lazyredraw
 set t_Co=256        "set 256 colors mode
 set incsearch       "turn on incremental search
 set backspace=indent,eol,start
