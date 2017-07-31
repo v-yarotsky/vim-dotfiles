@@ -39,11 +39,13 @@ Plugin 'fatih/vim-go'
 Plugin 'v-yarotsky/askag.vim'
 Plugin 'v-yarotsky/related.vim'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'scrooloose/syntastic'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
+Plugin 'ejholmes/vim-forcedotcom'
+Plugin 'tpope/vim-dispatch'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
