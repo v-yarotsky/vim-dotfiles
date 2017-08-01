@@ -24,7 +24,7 @@ set clipboard=unnamed
 
 "==================================================ruby specifig settings
 compiler ruby
-let ruby_fold=1
+let ruby_fold=0
 set foldlevel=99
 
 
