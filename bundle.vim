@@ -44,9 +44,9 @@ Plugin 'jamessan/vim-gnupg'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'ejholmes/vim-forcedotcom'
-Plugin 'tpope/vim-dispatch'
 Plugin 'w0rp/ale'
 Plugin 'ElmCast/elm-vim'
+Plugin 'benmills/vimux'
 
 call vundle#end()
 filetype plugin indent on

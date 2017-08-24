@@ -30,8 +30,12 @@ set foldlevel=99
 
 
 "==================================================look & feel
-set background=dark
-colorscheme Tomorrow-Night
+" set background=dark
+" colorscheme Tomorrow-Night
+set background=light
+colorscheme solarized
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='light'
 
 set laststatus=2    "always show statusbar
 set showtabline=1   "always show tabs bar
