@@ -4,8 +4,5 @@ function! PromoteToLet()
   :normal ==
 endfunction
 :command! PromoteToLet :call PromoteToLet()
-:map <leader>l :PromoteToLet<cr>
-
-" Quick hashrocket
-imap <c-l> <space>=><space>
+:map <leader>lt :PromoteToLet<cr>
 

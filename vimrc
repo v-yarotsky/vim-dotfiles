@@ -30,12 +30,8 @@ set foldlevel=99
 
 
 "==================================================look & feel
-" set background=dark
-" colorscheme Tomorrow-Night
 set background=light
 colorscheme solarized
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='light'
 
 set laststatus=2    "always show statusbar
 set showtabline=1   "always show tabs bar
@@ -53,7 +49,7 @@ au InsertLeave * hi StatusLine term=reverse ctermbg=237
 
 set wildmenu
 set wildmode=longest:list,full
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**,node_modules/**,vendor/**
 
 set completeopt=menu,preview
 
@@ -87,12 +83,6 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Kill escape delay
 set timeoutlen=300 ttimeoutlen=0
-
-nmap ,, :RelatedOpenFile<CR>
-nmap , :RelatedRunTest<CR>
-
-nmap  :AG<CR>
-vnoremap  "hy:Ag! <C-r>h<CR>
 
 function! RenameFile()
     let old_name = expand('%')
