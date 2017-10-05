@@ -21,6 +21,7 @@ set shell=/bin/sh
 set grepprg=ag\ --nogroup\ --nocolor
 
 set clipboard=unnamed
+runtime macros/matchit.vim
 
 "==================================================ruby specifig settings
 compiler ruby
