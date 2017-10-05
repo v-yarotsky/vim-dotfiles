@@ -22,7 +22,7 @@ function! SelectaCommand(choice_command, selecta_args, vim_command)
   exec a:vim_command . " " . selection
 endfunction
 
-let g:selecta_list_files_command = "git ls-files --other --cached --exclude tmp/"
+let g:selecta_list_files_command = "git ls-files --other --cached --exclude-standard"
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
