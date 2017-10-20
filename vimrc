@@ -31,9 +31,9 @@ set foldlevel=99
 
 
 "==================================================look & feel
-set background=light
-colorscheme solarized
+colorscheme solarized8_light
 
+set termguicolors
 set laststatus=2    "always show statusbar
 set showtabline=1   "always show tabs bar
 set number          "show line numbers
