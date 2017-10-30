@@ -19,7 +19,9 @@ function! SelectaCommand(choice_command, selecta_args, vim_command)
     return
   endtry
   redraw!
-  exec a:vim_command . " " . selection
+  if strlen(selection) > 0
+    exec a:vim_command . " " . selection
+  endif
 endfunction
 
 let g:selecta_list_files_command = "git ls-files --other --cached --exclude-standard"
