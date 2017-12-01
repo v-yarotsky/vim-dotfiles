@@ -31,7 +31,8 @@ set foldlevel=99
 
 
 "==================================================look & feel
-colorscheme solarized8_light
+"colorscheme solarized8_light
+colorscheme solarized8_dark
 
 set termguicolors
 set laststatus=2    "always show statusbar
