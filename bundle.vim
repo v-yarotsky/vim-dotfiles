@@ -28,6 +28,9 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'benmills/vimux'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'vim-scripts/DrawIt'
+Plugin 'hashivim/vim-terraform'
+Plugin 'pedrohdz/vim-yaml-folds'
+Plugin 'lmeijvogel/vim-yaml-helper'
 
 call vundle#end()
 filetype plugin indent on

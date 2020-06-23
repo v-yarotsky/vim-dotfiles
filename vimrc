@@ -1,7 +1,13 @@
+"==================================================plugins settings
+for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
+  exe 'source' f
+endfor
+
 source ~/.vim/bundle.vim
+
 "==================================================general settings
 set re=1 " fall back to old regex engine in ruby
-syntax on
+syntax enable
 set hidden
 set bufhidden=delete
 set exrc
@@ -28,11 +34,11 @@ compiler ruby
 let ruby_fold=0
 set foldlevel=99
 
-
-
 "==================================================look & feel
-"colorscheme solarized8_light
-colorscheme solarized8_dark
+"colorscheme solarized8_flat
+set background=light
+autocmd ColorScheme * highlight! link SignColumn LineNr
+colorscheme solarized8
 
 set termguicolors
 set laststatus=2    "always show statusbar
@@ -53,18 +59,14 @@ set wildmenu
 set wildmode=longest:list,full
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.DS_Store,doc/**,tmp/**,log/**,node_modules/**,vendor/**
 
-set completeopt=menu,preview
+"set completeopt=menu,preview
+set completeopt=longest,menuone
 
 "==================================================mappings
 nmap <leader>ve :tabedit $MYVIMRC<CR>
 
 "search and replace selected
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-"==================================================plugins settings
-for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
-  exe 'source' f
-endfor
 
 set tags += "tmp/tags"
 map <C-r><C-t> :!bundle list --paths=true \| xargs ctags -f tmp/tags -R --exclude=.git --exclude=tmp --exclude=log --langmap="ruby:+.rake.builder.rjs" `pwd`/*<CR><CR>
@@ -107,3 +109,6 @@ command! BC :call BufClose()
 cabbrev bc <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'BC' : 'bc')<CR>
 
 map \s :execute "! bundle exec rspec " . bufname("%") . ":" . line(".")<CR>
+
+set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
+set t_8b=[48;2;%lu;%lu;%lum  " Ditto
