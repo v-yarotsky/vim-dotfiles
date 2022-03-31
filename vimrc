@@ -112,3 +112,5 @@ map \s :execute "! bundle exec rspec " . bufname("%") . ":" . line(".")<CR>
 
 set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
 set t_8b=[48;2;%lu;%lu;%lum  " Ditto
+
+map <leader>f :let @+ = expand("%")<CR>    " copy current filename to clipboard
